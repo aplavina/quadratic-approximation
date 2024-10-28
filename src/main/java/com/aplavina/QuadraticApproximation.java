@@ -43,11 +43,11 @@ public class QuadraticApproximation {
             if (checkPrecision()) {
                 return xPolynomialMin;
             } else {
-                List<Double> sortedPoints = Stream.of(x1, x2, x3).sorted().toList();
-                if (xPolynomialMin >= sortedPoints.get(0) && xPolynomialMin <= sortedPoints.get(2)) {
+                List<Double> sortedPoints = Stream.of(x1, x2, x3, xPolynomialMin).sorted().toList();
+                if (xPolynomialMin > sortedPoints.get(0) && xPolynomialMin < sortedPoints.get(3)) {
                     x2 = Math.min(xPolynomialMin, xMin);
-                    x1 = sortedPoints.get(1) < x2 ? sortedPoints.get(1) : sortedPoints.get(0);
-                    x3 = sortedPoints.get(2) > x2 ? sortedPoints.get(2) : sortedPoints.get(3);
+                    x1 = sortedPoints.get(0);
+                    x3 = Math.min(Math.max(xPolynomialMin, xMin), sortedPoints.get(3));
                 } else {
                     x1 = xPolynomialMin;
                     calculatePoints();
