@@ -37,7 +37,7 @@ public class QuadraticApproximation {
             try {
                 calculatePolynomialMin();
             } catch (ZeroDivisorException e) {
-                x1 = Math.min(Math.min(x1, x2), x3);
+                x1 = xMin;
                 continue;
             }
             if (checkPrecision()) {

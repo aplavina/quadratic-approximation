@@ -12,7 +12,7 @@ public class Main {
         };
         double epsilon1 = 0.05;
         double epsilon2 = 0.5;
-        double x1 = 2;
+        double x1 = 1;
         double deltaX = 1;
         QuadraticApproximation approximation = new QuadraticApproximation(function, epsilon1, epsilon2, x1, deltaX);
         double res = approximation.approximate();
